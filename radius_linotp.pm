@@ -166,7 +166,7 @@ my $LIN_FAIL   = ":-/";
 
 
 #from @INC Config/File.pm
-use Config::File;
+use IO::File;
 
 our $CONFIG_FILE = "/etc/linotp2/rlm_perl.ini";
 our $Config = {};
