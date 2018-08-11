@@ -107,7 +107,7 @@ perl(1).
 use strict;
 #use IO::Socket::SSL qw(debug3); # <- enable SSL debugging!
 use LWP 5.64;
-use Config::File;
+use IO::File;
 use Data::Dumper;
 use Try::Tiny;
 
@@ -172,7 +172,7 @@ our $CONFIG_FILE = "/etc/linotp2/rlm_perl.ini";
 our $Config = {};
 
 if ( -e $CONFIG_FILE ) {
-    $Config = Config::File::read_config_file($CONFIG_FILE);
+    $Config = IO::File::read_config_file($CONFIG_FILE);
     $Config->{FSTAT}     = "found!";
 } else {
     $Config->{FSTAT}     = "not found!";
